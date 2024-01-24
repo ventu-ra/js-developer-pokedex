@@ -1,5 +1,4 @@
 class Pokemon {
-  id;
   number;
   name;
   type;

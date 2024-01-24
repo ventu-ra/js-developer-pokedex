@@ -1,6 +1,9 @@
 const pokemonList = document.getElementById('pokemonList')
 const loadMoreButton = document.getElementById('loadMoreButton')
 
+const searchInput = document.getElementById("searchInput");
+const btnSearch = document.getElementById("btnSearch");
+
 const maxRecords = 151
 const limit = 5
 let offset = 0;
@@ -45,3 +48,18 @@ loadMoreButton.addEventListener('click', () => {
     loadPokemonItens(offset, limit)
   }
 })
+
+btnSearch.addEventListener('click', () => {
+  var searchTerm = searchInput.value.toLowerCase();
+
+  var pokemons = document.querySelectorAll('.pokemon');
+
+  pokemons.forEach(function (pokemon) {
+    var pokemonName = pokemon.querySelector('.name').textContent.toLowerCase();
+    if (pokemonName.includes(searchTerm)) {
+      pokemon.style.display = 'block';
+    } else {
+      pokemon.style.display = 'none';
+    }
+  });
+});
