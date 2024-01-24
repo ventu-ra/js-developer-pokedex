@@ -5,7 +5,7 @@ const searchInput = document.getElementById("searchInput");
 const btnSearch = document.getElementById("btnSearch");
 
 const maxRecords = 151
-const limit = 5
+const limit = 10
 let offset = 0;
 
 function convertPokemonToLi(pokemon) {
